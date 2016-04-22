@@ -1,0 +1,10 @@
+.top-menu
+  = octicon :'three-bars', 'left-menu-icon'
+
+  .search-container
+    .search-input
+      = octicon :x
+      = text_field_tag :search, nil, placeholder: 'Search...'
+
+    .search-icon
+      = octicon :search

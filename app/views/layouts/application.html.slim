@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    meta charset='UTF-8'
+    title Makeup
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true
+    = javascript_include_tag 'application', 'data-turbolinks-track': true
+
+    = csrf_meta_tags
+
+  body [
+    class="#{controller_name}-#{action_name}"
+    id="#{controller_name}-#{action_name}"
+  ]
+
+    .overlay
+
+    = render 'layouts/top_menu'
+    = render 'layouts/left_menu'
+
+    .container = yield

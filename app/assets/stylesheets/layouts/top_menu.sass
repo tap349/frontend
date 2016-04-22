@@ -1,0 +1,89 @@
+@import compass/css3
+@import application/colors
+
+$line_height: 30px
+$icon_size: 16px
+$top_menu_height: 62px
+
+.top-menu
+  color: $text_color
+  background-color: $top_menu_bg_color
+  height: $top_menu_height
+  position: relative
+
+  .octicon-three-bars.left-menu-icon
+    left: 20px
+    margin-top: -($line_height / 2)
+    padding: ($line_height - $icon_size) / 2
+    position: absolute
+    text-align: center
+    top: 50%
+    width: $icon_size
+
+    &:hover
+      background-color: $top_menu_selected_bg_color
+      border-radius: 50%
+
+  .search-container
+    margin-top: -($line_height / 2)
+    position: absolute
+    right: 20px
+    top: 50%
+
+    .search-icon,
+    .search-input
+      display: inline-block
+      float: right
+
+    .search-icon
+      &:hover
+        background-color: $top_menu_selected_bg_color
+        border-radius: 50%
+
+      .octicon-search
+        padding: ($line_height - $icon_size) / 2
+
+    // setting opacity to 0 is not obligatory:
+    // overflow is hidden anyway when width = 0
+    .search-input
+      +transition(width ease 0.5s, opacity ease 0.5s)
+      height: $line_height
+      opacity: 0
+      overflow: hidden
+      position: relative
+      width: 0
+
+      // if margin set when inactive search icon
+      // is not positioned right above close icon
+      &.active
+        margin-left: 5px
+        opacity: 1
+        width: 250px
+
+      // need to set width and height explicitly
+      input
+        +box-sizing(border-box)
+        +input-placeholder
+          color: $text_muted_color
+          font-style: italic
+        background-color: $top_menu_bg_color
+        border-style: none
+        border-bottom: 1px solid
+        border-bottom-color: $search_input_border_color
+        color: inherit
+        font-size: 16px
+        font-weight: 100
+        height: inherit
+        padding-right: $line_height
+        width: inherit
+
+        &:focus
+          outline-style: none
+
+      .octicon-x
+        position: absolute
+        padding: ($line_height - $icon_size) / 2 - 1
+        right: 0
+
+        &:hover
+          font-weight: 700

@@ -1,0 +1,24 @@
+@import application/variables
+
+$sidebar_width: 300px
+
+.makeups-show
+  .sidebar
+    margin: 0 auto 20px
+    width: $sidebar_width
+
+    img
+      width: inherit
+
+  .main
+    .description
+      margin-bottom: 40px
+
+  @media only screen and (min-width: $desktop_width)
+    .sidebar
+      float: right
+      margin-bottom: 0
+
+    .main
+      margin-right: $sidebar_width
+      padding-right: 40px

@@ -1,0 +1,31 @@
+@import compass/css3
+@import application/colors
+
+$left_menu_width: 300px
+
+.left-menu
+  +transition(width ease 0.4s)
+  background-color: $left_menu_bg_color
+  height: 100%
+  overflow: hidden
+  position: absolute
+  top: 0
+  width: 0
+  z-index: 6
+
+  &.active
+    width: $left_menu_width
+
+  .octicon-x.close-left-menu-icon
+    font-weight: 100
+    right: 10px
+    top: 10px
+    position: absolute
+
+    &:hover
+      font-weight: 700
+
+  .content
+    font-size: 18px
+    padding: 0 20px
+    min-width: $left_menu_width - 40px

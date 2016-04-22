@@ -1,0 +1,23 @@
+@import application/colors
+@import application/variables
+
+body
+  font-family: 'PT Sans', sans-serif
+  text-rendering: optimizeLegibility
+
+  .overlay
+    background-color: $overlay_color
+    display: none
+    position: absolute
+    height: 100%
+    width: 100%
+    z-index: 5
+
+  .container
+    min-width: $min_width
+    padding: 10px 20px
+
+  @media only screen and (min-width: $desktop_width)
+    .container
+      margin: 0 auto
+      max-width: $max_width
